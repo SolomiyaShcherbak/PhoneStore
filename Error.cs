@@ -9,8 +9,7 @@ namespace PhoneStore
 	public enum ErrorCode
 	{
 		IndexOutsideLimit,
-		UnableToOpenFile, //
-		NegativePrice
+		InvalidPrice
 	};
 
 	public class Error : Exception
@@ -29,10 +28,8 @@ namespace PhoneStore
 			{
 				case ErrorCode.IndexOutsideLimit:
 					return "Index is outside the limit";
-				case ErrorCode.UnableToOpenFile:
-					return "Unable to open file";
-				case ErrorCode.NegativePrice:
-					return "Price is negative";
+				case ErrorCode.InvalidPrice:
+					return "Invalid price";
 				default:
 					return "";
 			}

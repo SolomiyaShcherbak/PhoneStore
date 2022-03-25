@@ -1,0 +1,17 @@
+[
+  {
+    "Brand": "Samsung",
+    "Model": "Galaxy A51",
+    "Price": 650.0
+  },
+  {
+    "Brand": "iPhone",
+    "Model": "12",
+    "Price": 1000.0
+  },
+  {
+    "Brand": "Nokia",
+    "Model": "3310",
+    "Price": 15.0
+  }
+]

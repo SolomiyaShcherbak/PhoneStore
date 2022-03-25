@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace PhoneStore
 {
     public class Phone : IDevice
     {
-		//constructor without params: params are entered by user
 		public Phone()
         {
 			Console.WriteLine("Brand:");
@@ -18,16 +18,17 @@ namespace PhoneStore
 			Console.WriteLine("Price:");
 			double price = double.Parse(Console.ReadLine());
 			if (price < 0)
-				throw new Error(ErrorCode.NegativePrice);
+				throw new Error(ErrorCode.InvalidPrice);
 			this.Price = price;
 		}
 
+		[JsonConstructor]
 		public Phone(string brand = "", string model = "", double price = 0)
 		{
 			this.Brand = brand;
 			this.Model = model;
 			if (price < 0)
-				throw new Error(ErrorCode.NegativePrice);
+				throw new Error(ErrorCode.InvalidPrice);
 			this.Price = price;
 		}
 

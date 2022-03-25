@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace PhoneStore
 {
@@ -7,8 +8,11 @@ namespace PhoneStore
     {
         public static IFactory GetFactory()
         {
-            //todo: dynamic based on parameter from config!
-            return new MemoryFactory();
+            var type = System.Configuration.ConfigurationManager.AppSettings["FactoryType"];
+            if (type == "TextFactory")
+                return new TextFactory();
+            else
+                return new MemoryFactory();
         }
     }
 }

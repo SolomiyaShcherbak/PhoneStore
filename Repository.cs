@@ -4,12 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace PhoneStore
 {
     public class Repository<T> : IRepository<T> where T : IDevice
     {
-        List<T> entities;
+        protected List<T> entities;
         public int Size { get => entities.Count; }
 
         public Repository()
@@ -17,12 +18,12 @@ namespace PhoneStore
             entities = new List<T>();
         }
 
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
             entities.Add(entity);
         }
 
-        public void Remove(int idx)
+        public virtual void Remove(int idx)
         {
             if (idx < 0 || idx >= entities.Count)
                 throw new Error(ErrorCode.IndexOutsideLimit);
@@ -32,7 +33,7 @@ namespace PhoneStore
             entities.RemoveAt(entities.Count - 1);
         }
 
-        public void Replace(T entity, int idx)
+        public virtual void Replace(T entity, int idx)
         {
             if (idx < 0 || idx >= entities.Count)
                 throw new Error(ErrorCode.IndexOutsideLimit);
@@ -40,7 +41,7 @@ namespace PhoneStore
             entities[idx] = entity;
         }
 
-        public void Print()
+        public virtual void Print()
         {
             foreach (var entity in entities)
             {
@@ -48,12 +49,12 @@ namespace PhoneStore
             }
         }
 
-        public void Sort(IComparer<T> comp)
+        public virtual void Sort(IComparer<T> comp)
         {
             entities.Sort(comp);
         }
 
-        public T this[int i]
+        public virtual T this[int i]
         {
             get
             {

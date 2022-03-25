@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PhoneStore
 {
-    class BrandComparer<T> : IComparer<T> where T : IDevice
+    public class BrandComparer<T> : IComparer<T> where T : IDevice
     {
         public int Compare(T item1, T item2)
         {
@@ -14,7 +14,7 @@ namespace PhoneStore
         }
     }
 
-    class ModelComparer<T> : IComparer<T> where T : IDevice
+    public class ModelComparer<T> : IComparer<T> where T : IDevice
     {
         public int Compare(T item1, T item2)
         {
@@ -22,7 +22,7 @@ namespace PhoneStore
         }
     }
 
-    class PriceComparer<T> : IComparer<T> where T : IDevice
+    public class PriceComparer<T> : IComparer<T> where T : IDevice
     {
         public int Compare(T item1, T item2)
         {

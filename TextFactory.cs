@@ -12,10 +12,5 @@ namespace PhoneStore
         {
             return new TextRepository<Phone>();
         }
-
-        //public IRepository<Bus> GetBusRepository()
-        //{
-        //    return new TextRepository<Bus>();
-        //}
     }
 }
