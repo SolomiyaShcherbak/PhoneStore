@@ -9,6 +9,7 @@ namespace PhoneStore
     public interface IRepository<T>
     {
         public int Size { get; }
+        List<T> GetAll();
         void Add(T entity);
         void Remove(int idx);
         void Replace(T entity, int idx);

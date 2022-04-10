@@ -9,6 +9,5 @@ namespace PhoneStore
     public interface IFactory
     {
         IRepository<Phone> GetPhoneRepository();
-        //IRepository</> GetBusRepository();
     }
 }

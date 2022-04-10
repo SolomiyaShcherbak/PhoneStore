@@ -26,7 +26,7 @@ namespace PhoneStore
     {
         public int Compare(T item1, T item2)
         {
-            return item1.Price.CompareTo(item1.Price);
+            return item1.Price.CompareTo(item2.Price);
         }
     }
 }

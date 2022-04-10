@@ -18,6 +18,11 @@ namespace PhoneStore
             entities = new List<T>();
         }
 
+        public List<T> GetAll()
+        {
+            return entities;
+        }
+
         public virtual void Add(T entity)
         {
             entities.Add(entity);

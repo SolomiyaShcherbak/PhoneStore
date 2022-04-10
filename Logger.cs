@@ -10,7 +10,6 @@ namespace PhoneStore
     public class Logger
     {
         private static Logger instance = new Logger();
-        private int lastError = 1;
         string fileName = "C:/Users/Private/source/repos/PhoneStore/PhoneStore/errors.txt";
 
         private Logger() { }
@@ -20,11 +19,11 @@ namespace PhoneStore
             return instance;
         }
 
-        public void LogError(string error)
+        public void LogError(Error error)
         {
             using (StreamWriter writer = new StreamWriter(fileName, true))
             {
-                writer.WriteLine(lastError++ + ": " + error);
+                writer.WriteLine(error.ToString() + " " + DateTime.Now);
             }
         }
     }

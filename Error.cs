@@ -9,7 +9,9 @@ namespace PhoneStore
 	public enum ErrorCode
 	{
 		IndexOutsideLimit,
-		InvalidPrice
+		InvalidPrice,
+        FieldIsEmpty,
+		UnknownError
 	};
 
 	public class Error : Exception
@@ -22,17 +24,21 @@ namespace PhoneStore
 			this.code = code;
 		}
 
-		public override string ToString()
+        public override string ToString()
         {
-			switch (code)
-			{
-				case ErrorCode.IndexOutsideLimit:
-					return "Index is outside the limit";
-				case ErrorCode.InvalidPrice:
-					return "Invalid price";
-				default:
-					return "";
-			}
-		}
-	};
+            switch (code)
+            {
+                case ErrorCode.IndexOutsideLimit:
+                    return "Error: Index is outside the limit";
+                case ErrorCode.InvalidPrice:
+                    return "Error: Invalid price";
+                case ErrorCode.FieldIsEmpty:
+                    return "Error: Field is empty";
+                case ErrorCode.UnknownError:
+                    return "Error: Unknown error";
+                default:
+                    return "";
+            }
+        }
+    };
 }
