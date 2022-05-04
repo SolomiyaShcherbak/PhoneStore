@@ -11,17 +11,26 @@ namespace PhoneStore
     public class TextRepository<T> : Repository<T> where T : IDevice
     {
         bool sync = true;
-        string sourceFileName = "C:/Users/Private/source/repos/PhoneStore/PhoneStore/phones.json";
+        string filePath = "C:/Users/Private/source/repos/PhoneStore/PhoneStore/phones.json";
 
         public TextRepository()
         {
-            ReadFromFile();
+            ReadFromFile(filePath);
+        }
+
+        public TextRepository(string filePath)
+        {
+            if (new FileInfo(filePath).Length == 0)
+                entities = new List<T>();
+            else
+                ReadFromFile(filePath);
+            sync = false;
         }
 
         void SyncWrite()
         {
             if (sync)
-                WriteToFile();
+                WriteToFile(filePath);
         }
 
         void SyncRead()
@@ -29,7 +38,7 @@ namespace PhoneStore
             if (sync)
             {
                 entities.Clear();
-                ReadFromFile();
+                ReadFromFile(filePath);
             }
         }
 
@@ -77,16 +86,16 @@ namespace PhoneStore
             }
         }
 
-        public void ReadFromFile()
+        public void ReadFromFile(string filePath)
         {
-            var json = File.ReadAllText(sourceFileName);
+            var json = File.ReadAllText(filePath);
             this.entities = JsonConvert.DeserializeObject<List<T>>(json);
         }
 
-        public void WriteToFile()
+        public void WriteToFile(string filePath)
         {
             var json = JsonConvert.SerializeObject(entities);
-            File.WriteAllText(sourceFileName, json);
+            File.WriteAllText(filePath, json);
         }
     }
 }

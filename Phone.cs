@@ -32,11 +32,16 @@ namespace PhoneStore
 			this.Price = price;
 		}
 
-		public Phone(Phone other)
+		public static bool operator == (Phone phone1, Phone phone2)
 		{
-			this.Brand = other.Brand;
-			this.Model = other.Model;
-			this.Price = other.Price;
+			return (phone1.Brand == phone2.Brand
+						&& phone1.Model == phone2.Model
+						&& phone1.Price == phone2.Price);
+		}
+
+		public static bool operator != (Phone phone1, Phone phone2)
+		{
+			return !(phone1 == phone2);
 		}
 
 		public override string ToString()

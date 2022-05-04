@@ -9,6 +9,7 @@ namespace PhoneStore
         public static IFactory GetFactory()
         {
             var type = System.Configuration.ConfigurationManager.AppSettings["FactoryType"];
+
             if (type == "TextFactory")
                 return new TextFactory();
             else

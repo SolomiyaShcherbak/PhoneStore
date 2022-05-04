@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32126.315
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneStore", "PhoneStore.csproj", "{AB7B15CC-0B9F-42B7-ABC0-D8CBB46500CF}"
 EndProject
@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneStoreAdmin", "..\Phone
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneStoreCustomer", "..\PhoneStoreCustomer\PhoneStoreCustomer.csproj", "{A7DC5DCD-FFBB-40E9-926B-A8A4045E5D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneStoreAdminWindowsForms", "..\PhoneStoreAdminWindowsForms\PhoneStoreAdminWindowsForms.csproj", "{F74B56D9-3171-4882-9321-2DF3A71D4D28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneStoreAdminWindowsForms", "..\PhoneStoreAdminWindowsForms\PhoneStoreAdminWindowsForms.csproj", "{F74B56D9-3171-4882-9321-2DF3A71D4D28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneStoreTests", "..\PhoneStoreTests\PhoneStoreTests.csproj", "{97C413AE-E6CD-419D-8269-9833EBEFE087}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F74B56D9-3171-4882-9321-2DF3A71D4D28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F74B56D9-3171-4882-9321-2DF3A71D4D28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F74B56D9-3171-4882-9321-2DF3A71D4D28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97C413AE-E6CD-419D-8269-9833EBEFE087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97C413AE-E6CD-419D-8269-9833EBEFE087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97C413AE-E6CD-419D-8269-9833EBEFE087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97C413AE-E6CD-419D-8269-9833EBEFE087}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
